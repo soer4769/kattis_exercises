@@ -1,0 +1,91 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class basicprogramming1 {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt(), t = scanner.nextInt();
+        scanner.nextLine();
+
+        switch(t){
+            case 1:
+                System.out.println(7);
+                break;
+            case 2:
+                int A1 = scanner.nextInt(), A2 = scanner.nextInt();
+
+                if(A1 > A2){
+                    System.out.println("Bigger");
+                } else if(A1 == A2){
+                    System.out.println("Equal");
+                } else {
+                    System.out.println("Smaller");
+                }
+                break;
+            case 3:
+                scanner.nextInt();
+                int A1 = scanner.nextInt();
+                System.out.println(A1);
+                break;
+            case 4:
+            case 5:
+                int sum = 0;
+                while(scanner.hasNextInt()){
+                    int A0 = scanner.nextInt();
+
+                    if(((A0%2)==0) && t == 5 || t == 4){
+                        sum += A0;
+                    }
+                }
+                System.out.println(sum);
+                break;
+            case 6:
+                String alpha = "abcdefghijklmnopqrstuvwxyz", message = "";
+                while(scanner.hasNextInt()){
+                    message += Character.toString(alpha.charAt(scanner.nextInt()%26));
+                }
+                System.out.println(message);
+                break;
+            case 7:
+                ArrayList containsArr = new ArrayList();
+
+                while(scanner.hasNextInt()){
+                for(int i = 0; i < N; i++){
+                    if(A[i] > (N-1) || A[i] < 0){
+                        System.out.println("Out");
+                        break;
+                    } else if(containsArr.contains(A[i])){
+                        System.out.println("Cyclic");
+                        break;
+                    } else if(i == (N-1)){
+                        System.out.println("Done");
+                        break;
+                    } else {
+                        containsArr.add(i);
+                        i = A[i]-1;
+                        continue;
+                    }
+                }
+                }
+
+                for(int i = 0; i < N; i++){
+                    if(A[i] > (N-1) || A[i] < 0){
+                        System.out.println("Out");
+                        break;
+                    } else if(containsArr.contains(A[i])){
+                        System.out.println("Cyclic");
+                        break;
+                    } else if(i == (N-1)){
+                        System.out.println("Done");
+                        break;
+                    } else {
+                        containsArr.add(i);
+                        i = A[i]-1;
+                        continue;
+                    }
+                }
+                break;
+        }
+    }
+}

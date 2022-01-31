@@ -1,0 +1,88 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.time.Duration;
+import java.time.Instant;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class basicprogramming1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
+
+        String infoLine = reader.readLine();
+        int N = Integer.parseInt(infoLine[0]), t = Integer.parseInt(infoLine[1]);
+        String[] A = reader.readLine().split(" ");
+
+        switch(t){
+            case 1:
+                System.out.println(7);
+                break;
+            case 2:
+                int A1 = Integer.parseInt(A[0]), A2 = Integer.parseInt(A[1]);
+                if(A1 > A2){
+                    System.out.println("Bigger");
+                } else if(A1 < A2){
+                    System.out.println("Smaller");
+                } else {
+                    System.out.println("Equal");
+                }
+                break;
+            case 3:
+                System.out.println(A[1]);
+                break;
+            case 4:
+            case 5:
+                int sum = 0;
+                for(String currVal : A){
+                    int A0 = Integer.parseInt(cuurVal);
+                    
+                    
+                }
+                while(scanner.hasNextInt()){
+                    int A0 = scanner.nextInt();
+
+                    import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+                }
+                System.out.println(sum);
+                break;
+            case 6:
+                Instant start = Instant.now();
+                String alpha = "abcdefghijklmnopqrstuvwxyz", message = "";
+                while(scanner.hasNextInt()){
+                    message += Character.toString((char) scanner.nextInt()%26);
+                }
+                System.out.println(message);
+                Instant end = Instant.now();
+                Duration timeElapsed = Duration.between(start,end);
+                System.out.println("Time taken: " + timeElapsed.toMillis() + " milliseconds");
+                break;
+            case 7:
+                int[] A = new int[N];
+                ArrayList containsArr = new ArrayList();
+                int p = 0;
+
+                for(int i = 0; i < N; i++){
+                    A[i] = scanner.nextInt();
+                }
+                while(true){
+                    if(p > (N-1) || p < 0){
+                        System.out.println("Out");
+                        break;
+                    }  else if(p == (N-1)){
+                        System.out.println("Done");
+                        break;
+                    } else if(containsArr.contains(p)){
+                        System.out.println("Cyclic");
+                        break;
+                    } else {
+                        containsArr.add(p);
+                        p = A[p];
+                    }
+                }
+                break;
+        }
+    }
+}
